@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "metamorph-art",
   "description": "",
-  "appid": "touristappid",
+  "appid": "wx8d3bbd9dbc9a98d7",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -35,5 +35,6 @@
     "ignore": [],
     "include": []
   },
-  "editorSetting": {}
+  "editorSetting": {},
+  "libVersion": "3.8.2"
 }
