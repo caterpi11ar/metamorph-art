@@ -7,3 +7,7 @@ node_modules/
 .swc
 *.local
 .eslintcache
+
+# env
+.env.development
+.env.production
