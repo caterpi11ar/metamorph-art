@@ -4,12 +4,12 @@ import './index.scss'
 
 export default function WorkSpace() {
   useLoad(() => {
-    console.log('Page loaded.')
+    console.log('Workspace page loaded.')
   })
 
   return (
     <View>
-      <Text>workSpace</Text>
+      <Text>工作区</Text>
     </View>
   )
 }
