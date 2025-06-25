@@ -1,31 +1,94 @@
-import { Button, Text, View } from '@tarojs/components'
-import { chooseImage, useLoad } from '@tarojs/taro'
+import { Image, Swiper, SwiperItem, View } from '@tarojs/components'
+import React, { useState } from 'react'
 import './index.scss'
 
-export default function Index() {
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
+const HomePage: React.FC = () => {
+  const [recommendImages] = useState([
+    'https://example.com/recommend1.jpg',
+    'https://example.com/recommend2.jpg',
+    'https://example.com/recommend3.jpg',
+  ])
 
-  const handleChooseImage = async () => {
-    try {
-      const res = await chooseImage({
-        count: 9, // 最多可以选择的图片张数
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      })
-      console.log('选择的图片路径:', res.tempFilePaths)
-      // 这里可以将选择的图片路径传递给图像 AI 工具进行处理
-    }
-    catch (error) {
-      console.error('选择图片失败:', error)
-    }
-  }
+  const [userGallery] = useState([
+    'https://example.com/user1.jpg',
+    'https://example.com/user2.jpg',
+    'https://example.com/user3.jpg',
+  ])
+
+  const [hotActivities] = useState([
+    {
+      title: '夏日艺术创作挑战',
+      description: '用AI重新定义艺术边界',
+      image: 'https://example.com/activity1.jpg',
+    },
+    {
+      title: '复古风格转换大赛',
+      description: '将现代照片转换为经典风格',
+      image: 'https://example.com/activity2.jpg',
+    },
+  ])
 
   return (
-    <View className="index">
-      <Text>metamorph-art</Text>
-      <Button onClick={handleChooseImage}>选择图片</Button>
+    <View className="home-page">
+      {/* 推荐轮播图 */}
+      <Swiper
+        className="recommend-swiper"
+        indicatorColor="#999"
+        indicatorActiveColor="#333"
+        circular
+        indicatorDots
+        autoplay
+      >
+        {recommendImages.map((img, index) => (
+          <SwiperItem key={index}>
+            <Image
+              src={img}
+              mode="aspectFill"
+              className="swiper-image"
+            />
+          </SwiperItem>
+        ))}
+      </Swiper>
+
+      {/* 用户作品画廊 */}
+      <View className="user-gallery">
+        <View className="section-title">用户作品</View>
+        <View className="gallery-container">
+          {userGallery.map((img, index) => (
+            <Image
+              key={index}
+              src={img}
+              mode="aspectFill"
+              className="gallery-image"
+            />
+          ))}
+        </View>
+      </View>
+
+      {/* 热门活动 */}
+      <View className="hot-activities">
+        <View className="section-title">热门活动</View>
+        {hotActivities.map((activity, index) => (
+          <View key={index} className="activity-card">
+            <Image
+              src={activity.image}
+              mode="aspectFill"
+              className="activity-image"
+            />
+            <View className="activity-content">
+              <View className="activity-title">{activity.title}</View>
+              <View className="activity-description">{activity.description}</View>
+            </View>
+          </View>
+        ))}
+      </View>
+
+      {/* 广告位预留 */}
+      <View className="ad-container">
+        {/* 可以接入广告SDK */}
+      </View>
     </View>
   )
 }
+
+export default HomePage

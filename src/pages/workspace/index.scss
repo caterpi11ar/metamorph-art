@@ -1,0 +1,266 @@
+@import '../../styles/variables.scss';
+
+// 颜色定义
+$primary-color: #007AFF;
+$background-color: #F2F2F7;
+$card-background: rgba(255, 255, 255, 0.8);
+$text-color: #000000;
+$gradient-accent: linear-gradient(135deg, #8a4fff, #5f27cd);
+
+.workspace-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $background-light;
+  padding: 0;
+
+  .image-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: $shadow-medium;
+    transition: all 0.3s ease;
+
+    .workspace-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: brightness(0.9);
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.1), 
+        rgba(0, 0, 0, 0.4)
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s ease;
+
+      .upload-hint {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 15px 30px;
+        border-radius: $border-radius-medium;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+    }
+
+    &:hover {
+      .workspace-image {
+        transform: scale(1.05);
+      }
+    }
+
+    &.has-image {
+      cursor: default;
+      
+      .image-overlay {
+        display: none;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-medium;
+    padding: $spacing-large;
+
+    .material-button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      height: 48px;
+      padding: 0 16px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: white;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+      .button-content {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+      }
+
+      .button-icon {
+        font-size: 20px;
+        margin-right: 4px;
+        opacity: 0.9;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.2);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      }
+    }
+
+    .process-button {
+      background: $gradient-accent;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .save-button {
+      background: linear-gradient(135deg, #0084ff, #00c6ff);
+    }
+
+    .share-button {
+      background: linear-gradient(135deg, #ff2d55, #ff4d4d);
+    }
+  }
+}
+
+.workspace-page {
+  background-color: $background-color;
+  min-height: 100vh;
+  padding: 20px;
+
+  // 图片上传区域
+  .image-upload-section {
+    background-color: $card-background;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .upload-button {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .selected-image {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+  }
+
+  // 风格选择区域
+  .style-selection-section {
+    background-color: $card-background;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: $text-color;
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+
+      .style-button {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+
+        &.selected {
+          background-color: $primary-color;
+          color: white;
+        }
+      }
+    }
+  }
+
+  // 转换按钮
+  .transform-button {
+    width: 100%;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  // 处理后图片区域
+  .processed-image-section {
+    background-color: $card-background;
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: $text-color;
+    }
+
+    .processed-image {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .save-button {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+}

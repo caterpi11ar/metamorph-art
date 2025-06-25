@@ -2,7 +2,7 @@
   "name": "metamorph-art",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "AI 图片风格化微信小程序",
   "templateInfo": {
     "name": "default",
     "typescript": true,
@@ -10,6 +10,17 @@
     "framework": "React"
   },
   "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/caterpi11ar/metamorph-art#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caterpi11ar/metamorph-art.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caterpi11ar/metamorph-art/issues"
+  },
+  "keywords": [],
+  "main": "babel.config.js",
   "scripts": {
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
@@ -54,7 +65,9 @@
     "@tarojs/shared": "4.0.12",
     "@tarojs/taro": "4.0.12",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "sharp": "^0.34.2",
+    "svgo": "^3.3.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.0",
