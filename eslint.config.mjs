@@ -5,4 +5,7 @@ export default antfu({
     'node/prefer-global/process': 'off',
     'no-console': ['error', { allow: ['log', 'warn', 'error', 'info'] }],
   },
+  ignores: [
+    'src/custom-tab-bar/**',
+  ],
 })

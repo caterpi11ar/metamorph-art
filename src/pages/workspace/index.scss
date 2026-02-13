@@ -1,3 +1,55 @@
+@use '../../styles/variables.scss' as *;
+
 .workspace {
-  padding: 20px;
+  min-height: 100vh;
+  background-color: $bg-secondary;
+  padding: $space-6;
+  padding-bottom: 120px;
+
+  &--result {
+    padding-bottom: $space-8;
+  }
+
+  &__section {
+    margin-bottom: $space-6;
+
+    &--bottom {
+      margin-bottom: 0;
+      padding-top: $space-3;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: $font-md;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+    margin-bottom: $space-3;
+  }
+
+  &__control-item {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+  }
+
+  &__control-label {
+    font-size: $font-sm;
+    font-weight: $weight-medium;
+    color: $text-primary;
+  }
+
+  &__text-input {
+    width: 100%;
+    padding: $space-3;
+    background: $gray-50;
+    border-radius: $radius-sm;
+    font-size: $font-sm;
+    color: $text-primary;
+    border: 1px solid $border-color;
+  }
+
+  &__text-input-placeholder {
+    color: $text-tertiary;
+  }
 }

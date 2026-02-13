@@ -1,0 +1,175 @@
+@use '../../styles/variables.scss' as *;
+
+.invitation {
+  min-height: 100vh;
+  background-color: $bg-secondary;
+  padding: $space-6;
+
+  // Code Card (prominent)
+  &__code-card {
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    padding: $space-7 $space-6;
+    margin-bottom: $space-5;
+    text-align: center;
+  }
+
+  &__code-label {
+    display: block;
+    font-size: $font-sm;
+    color: $text-tertiary;
+    margin-bottom: $space-3;
+  }
+
+  &__code-text {
+    display: block;
+    font-size: $font-3xl;
+    font-weight: $weight-heavy;
+    letter-spacing: 8px;
+    color: $text-primary;
+    margin-bottom: $space-6;
+  }
+
+  &__code-actions {
+    display: flex;
+    gap: $space-3;
+  }
+
+  &__code-btn {
+    flex: 1;
+    text-align: center;
+    padding: $space-3;
+    border-radius: $radius-sm;
+    background: $gray-100;
+    transition: $transition-fast;
+
+    &--primary {
+      background: $primary-color;
+
+      .invitation__code-btn-text {
+        color: $text-inverse;
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__code-btn-text {
+    font-size: $font-sm;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+  }
+
+  // Stats
+  &__stats {
+    display: flex;
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    padding: $space-5;
+    margin-bottom: $space-5;
+  }
+
+  &__stat {
+    flex: 1;
+    text-align: center;
+  }
+
+  &__stat-num {
+    display: block;
+    font-size: $font-2xl;
+    font-weight: $weight-heavy;
+    color: $text-primary;
+  }
+
+  &__stat-label {
+    display: block;
+    font-size: $font-xs;
+    color: $text-tertiary;
+    margin-top: $space-1;
+  }
+
+  // Rules (simplified)
+  &__rules {
+    padding: $space-4 $space-5;
+    margin-bottom: $space-5;
+  }
+
+  &__rules-text {
+    font-size: $font-xs;
+    color: $text-tertiary;
+    line-height: $leading-relaxed;
+  }
+
+  // Records
+  &__records {
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    padding: $space-5;
+  }
+
+  &__records-title {
+    display: block;
+    font-size: $font-md;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+    margin-bottom: $space-4;
+  }
+
+  &__record-item {
+    display: flex;
+    align-items: center;
+    padding: $space-3 0;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__record-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: $space-3;
+  }
+
+  &__record-info {
+    flex: 1;
+  }
+
+  &__record-name {
+    display: block;
+    font-size: $font-sm;
+    font-weight: $weight-medium;
+    color: $text-primary;
+  }
+
+  &__record-time {
+    display: block;
+    font-size: $font-xs;
+    color: $text-tertiary;
+    margin-top: $space-1;
+  }
+
+  &__record-credits {
+    font-size: $font-md;
+    font-weight: $weight-bold;
+    color: $primary-color;
+  }
+
+  &__load-more {
+    text-align: center;
+    padding: $space-4 0;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__load-more-text {
+    font-size: $font-xs;
+    color: $primary-color;
+  }
+}

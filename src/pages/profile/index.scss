@@ -1,3 +1,197 @@
+@use '../../styles/variables.scss' as *;
+
 .profile {
-  padding: 20px;
+  min-height: 100vh;
+  background-color: $bg-secondary;
+  padding: $space-6;
+  padding-bottom: 120px;
+
+  // User Card
+  &__user-card {
+    display: flex;
+    align-items: center;
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    padding: $space-6;
+    margin-bottom: $space-5;
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: $space-4;
+  }
+
+  &__user-info {
+    flex: 1;
+  }
+
+  &__nickname {
+    display: block;
+    font-size: $font-xl;
+    font-weight: $weight-bold;
+    color: $text-primary;
+    margin-bottom: $space-1;
+  }
+
+  &__invite-code {
+    display: block;
+    font-size: $font-xs;
+    color: $text-tertiary;
+  }
+
+  &__login-btn {
+    background: $primary-color;
+    color: $text-inverse;
+    padding: $space-2 $space-5;
+    border-radius: $radius-xl;
+    font-size: $font-sm;
+    font-weight: $weight-semibold;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__logout-btn {
+    padding: $space-2 $space-4;
+    border-radius: $radius-xl;
+    font-size: $font-xs;
+    color: $text-tertiary;
+    background: $gray-100;
+  }
+
+  // Credits Card
+  &__credits-card {
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    padding: $space-6;
+    margin-bottom: $space-5;
+    border: 1px solid $border-color;
+  }
+
+  &__credits-main {
+    text-align: center;
+    margin-bottom: $space-4;
+  }
+
+  &__credits-value {
+    display: block;
+    font-size: $font-3xl;
+    font-weight: $weight-heavy;
+    color: $text-primary;
+    line-height: $leading-tight;
+  }
+
+  &__credits-label {
+    display: block;
+    font-size: $font-xs;
+    color: $text-tertiary;
+    margin-top: $space-1;
+  }
+
+  &__credits-divider {
+    height: 1px;
+    background: $border-color;
+    margin-bottom: $space-4;
+  }
+
+  &__credits-stats {
+    display: flex;
+    justify-content: center;
+    gap: $space-8;
+  }
+
+  &__credits-stat {
+    text-align: center;
+  }
+
+  &__credits-stat-num {
+    display: block;
+    font-size: $font-lg;
+    font-weight: $weight-bold;
+    color: $text-primary;
+  }
+
+  &__credits-stat-label {
+    display: block;
+    font-size: $font-xs;
+    color: $text-tertiary;
+    margin-top: $space-1;
+  }
+
+  // Quick Actions (horizontal list)
+  &__actions {
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    margin-bottom: $space-5;
+    overflow: hidden;
+  }
+
+  &__action-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-4 $space-5;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:active {
+      background: $gray-50;
+    }
+  }
+
+  &__action-name {
+    font-size: $font-base;
+    color: $text-primary;
+    font-weight: $weight-medium;
+  }
+
+  &__action-arrow {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid $text-tertiary;
+    border-bottom: 1.5px solid $text-tertiary;
+    transform: rotate(-45deg);
+  }
+
+  // Menu
+  &__menu {
+    background: $bg-primary;
+    border-radius: $radius-lg;
+    overflow: hidden;
+  }
+
+  &__menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-4 $space-5;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:active {
+      background: $gray-50;
+    }
+  }
+
+  &__menu-name {
+    font-size: $font-base;
+    color: $text-primary;
+  }
+
+  &__menu-arrow {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid $text-tertiary;
+    border-bottom: 1.5px solid $text-tertiary;
+    transform: rotate(-45deg);
+  }
 }

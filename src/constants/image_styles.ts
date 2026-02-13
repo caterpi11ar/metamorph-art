@@ -57,4 +57,28 @@ export const IMAGE_STYLES: ImageStyleConfig[] = [
     color: '#87CEEB',
     icon: '💧',
   },
+  {
+    id: 'nianhua',
+    name: '年画风',
+    description: '传统年画，喜庆吉祥',
+    prompt: 'Traditional Chinese New Year painting style, folk art, bright festive colors, auspicious symbols, woodblock print aesthetic',
+    color: '#E53935',
+    icon: '🧧',
+  },
+  {
+    id: 'paper_cut',
+    name: '剪纸风',
+    description: '中国剪纸艺术，精致镂空',
+    prompt: 'Chinese paper-cut art style, intricate silhouette, red and white contrast, folk patterns, symmetrical design',
+    color: '#C62828',
+    icon: '✂️',
+  },
+  {
+    id: 'guochao',
+    name: '国潮风',
+    description: '新国潮设计，传统与现代融合',
+    prompt: 'Chinese Guochao style, modern Chinese aesthetics, bold colors, traditional elements with contemporary design, cultural fusion',
+    color: '#FF6F00',
+    icon: '🐉',
+  },
 ]

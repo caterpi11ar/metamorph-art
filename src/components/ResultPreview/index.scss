@@ -1,0 +1,109 @@
+@use '../../styles/variables.scss' as *;
+
+.result-preview {
+  padding: $spacing-large 0;
+
+  &__image-wrap {
+    border-radius: $radius-lg;
+    overflow: hidden;
+    margin-bottom: $space-6;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bg-primary;
+    border-radius: $radius-md;
+    padding: $space-3 0;
+    margin-bottom: $space-6;
+  }
+
+  &__action {
+    flex: 1;
+    text-align: center;
+    padding: $space-2 0;
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__action-divider {
+    width: 1px;
+    height: 20px;
+    background: $border-color;
+  }
+
+  &__action-text {
+    font-size: $font-sm;
+    color: $primary-color;
+    font-weight: $weight-medium;
+  }
+
+  // Error
+  &__error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $space-8 0;
+    gap: $space-3;
+  }
+
+  &__error-graphic {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $space-2;
+  }
+
+  &__error-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba($color-error, 0.1);
+  }
+
+  &__error-title {
+    font-size: $font-lg;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+  }
+
+  &__error-msg {
+    font-size: $font-sm;
+    color: $text-tertiary;
+  }
+
+  // Bottom
+  &__bottom {
+    display: flex;
+    gap: $space-3;
+  }
+
+  &__btn {
+    flex: 1;
+    text-align: center;
+    padding: $space-4;
+    border-radius: $radius-sm;
+    font-size: $font-base;
+    font-weight: $weight-semibold;
+    transition: $transition-fast;
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &--secondary {
+      background: $gray-100;
+      color: $text-primary;
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import type { ImageStyleConfig } from '../constants/image_styles'
 import { Text, View } from '@tarojs/components'
-import Taro from '@tarojs/taro'
 import React, { useEffect, useState } from 'react'
 import { IMAGE_STYLES } from '../constants/image_styles'
 import './StyleSelector.scss'
@@ -25,53 +24,24 @@ const StyleSelector: React.FC<StyleSelectorProps> = ({
   const handleStyleSelect = (style: ImageStyleConfig) => {
     setSelectedStyle(style.id)
     onStyleSelect && onStyleSelect(style)
-    Taro.showToast({
-      title: `已选择${style.name}`,
-      icon: 'success',
-      duration: 1000,
-    })
   }
 
   return (
     <View className="style-selector">
-      <Text className="selector-title">选择艺术风格</Text>
-      <View className="style-grid">
+      <Text className="style-selector__title">选择艺术风格</Text>
+      <View className="style-selector__grid">
         {IMAGE_STYLES.map(style => (
           <View
             key={style.id}
-            className={`style-card ${selectedStyle === style.id ? 'selected' : ''}`}
-            style={{
-              backgroundColor: selectedStyle === style.id
-                ? style.color
-                : `${style.color}20`,
-              borderColor: style.color,
-            }}
+            className={`style-selector__card ${selectedStyle === style.id ? 'style-selector__card--selected' : ''}`}
             onClick={() => handleStyleSelect(style)}
           >
             <View
-              className="style-icon"
-              style={{
-                color: selectedStyle === style.id ? 'white' : 'inherit',
-              }}
-            >
-              {style.icon}
-            </View>
-            <Text
-              className="style-name"
-              style={{
-                color: selectedStyle === style.id ? 'white' : '$text-primary',
-              }}
-            >
-              {style.name}
-            </Text>
-            <Text
-              className="style-description"
-              style={{
-                color: selectedStyle === style.id ? 'rgba(255,255,255,0.8)' : '$text-secondary',
-              }}
-            >
-              {style.description}
-            </Text>
+              className="style-selector__swatch"
+              style={{ backgroundColor: style.color }}
+            />
+            <Text className="style-selector__name">{style.name}</Text>
+            <Text className="style-selector__desc">{style.description}</Text>
           </View>
         ))}
       </View>

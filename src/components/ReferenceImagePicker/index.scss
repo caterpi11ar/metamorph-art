@@ -1,0 +1,60 @@
+@use '../../styles/variables.scss' as *;
+
+.ref-image-picker {
+  &__label {
+    display: block;
+    font-size: $font-sm;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+    margin-bottom: $space-3;
+  }
+
+  &__upload {
+    width: 160px;
+    height: 160px;
+    border: 1.5px dashed $gray-300;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-fast;
+
+    &:active {
+      border-color: $primary-color;
+      background: $primary-bg;
+    }
+  }
+
+  &__upload-text {
+    font-size: $font-xs;
+    color: $text-tertiary;
+    text-align: center;
+    padding: 0 $space-3;
+  }
+
+  &__preview {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__image {
+    width: 160px;
+    height: 160px;
+    border-radius: $radius-md;
+    display: block;
+  }
+
+  &__remove {
+    position: absolute;
+    top: $space-2;
+    right: $space-2;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: $radius-xs;
+    padding: $space-1 $space-2;
+  }
+
+  &__remove-text {
+    font-size: $font-xs;
+    color: $text-inverse;
+  }
+}

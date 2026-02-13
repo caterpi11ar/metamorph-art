@@ -1,0 +1,48 @@
+@use '../../styles/variables.scss' as *;
+
+.segmented-control {
+  &__label {
+    display: block;
+    font-size: $font-sm;
+    font-weight: $weight-medium;
+    color: $text-primary;
+    margin-bottom: $space-2;
+  }
+
+  &__track {
+    display: flex;
+    position: relative;
+    background: $gray-100;
+    border-radius: $radius-sm;
+    padding: 3px;
+  }
+
+  &__option {
+    flex: 1;
+    text-align: center;
+    padding: $space-3 0;
+    z-index: 1;
+    transition: $transition-fast;
+
+    &--active .segmented-control__option-text {
+      color: $primary-color;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  &__option-text {
+    font-size: $font-sm;
+    color: $text-secondary;
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: calc(100% - 6px);
+    background: $bg-primary;
+    border-radius: 8px;
+    box-shadow: $shadow-sm;
+    transition: transform 0.3s $ease-in-out, width 0.3s $ease-in-out;
+  }
+}

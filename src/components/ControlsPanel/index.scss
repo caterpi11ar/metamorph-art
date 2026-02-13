@@ -1,0 +1,39 @@
+@use '../../styles/variables.scss' as *;
+
+.controls-panel {
+  background: $bg-primary;
+  border-radius: $radius-md;
+  padding: $space-5;
+
+  &__basic {
+    display: flex;
+    flex-direction: column;
+    gap: $space-5;
+  }
+
+  &__divider {
+    height: 1px;
+    background: $border-color;
+    margin: $space-4 0;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-2 0;
+  }
+
+  &__toggle-text {
+    font-size: $font-sm;
+    color: $primary-color;
+    font-weight: $weight-medium;
+  }
+
+  &__advanced {
+    display: flex;
+    flex-direction: column;
+    gap: $space-5;
+    padding-top: $space-4;
+  }
+}

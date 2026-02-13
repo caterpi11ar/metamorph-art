@@ -1,0 +1,68 @@
+@use '../../styles/variables.scss' as *;
+
+.image-card {
+  border-radius: $radius-md;
+  overflow: hidden;
+  background-color: $bg-primary;
+  box-shadow: $shadow-sm;
+  transition: $transition-fast;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &__img-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, $gray-100 25%, $gray-50 50%, $gray-100 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  &__img {
+    width: 100%;
+    height: 280px;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &--loaded {
+      opacity: 1;
+    }
+  }
+
+  &__info {
+    padding: $space-3 $space-4;
+  }
+
+  &__title {
+    display: block;
+    font-size: $font-sm;
+    font-weight: $weight-semibold;
+    color: $text-primary;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: $font-xs;
+    color: $text-tertiary;
+    margin-top: $space-1;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

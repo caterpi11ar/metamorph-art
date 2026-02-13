@@ -1,0 +1,28 @@
+@use '../../styles/variables.scss' as *;
+
+.slider-control {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $space-2;
+  }
+
+  &__label {
+    font-size: $font-sm;
+    font-weight: $weight-medium;
+    color: $text-primary;
+  }
+
+  &__value {
+    font-size: $font-sm;
+    font-weight: $weight-semibold;
+    color: $primary-color;
+    min-width: 48px;
+    text-align: right;
+  }
+
+  &__slider {
+    margin: 0;
+  }
+}

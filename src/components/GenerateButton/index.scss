@@ -1,0 +1,58 @@
+@use '../../styles/variables.scss' as *;
+
+.generate-btn {
+  background: $gradient-primary;
+  border-radius: $radius-md;
+  padding: $space-5;
+  text-align: center;
+  transition: $transition-fast;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--disabled {
+    background: $gray-300;
+
+    &:active {
+      transform: none;
+    }
+
+    .generate-btn__text {
+      color: $text-inverse;
+    }
+
+    .generate-btn__cost-text {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &--loading {
+    animation: pulse 1.5s ease-in-out infinite;
+
+    &:active {
+      transform: none;
+    }
+  }
+
+  &__text {
+    font-size: $font-lg;
+    font-weight: $weight-bold;
+    color: $text-inverse;
+    display: block;
+  }
+
+  &__cost {
+    margin-top: $space-1;
+  }
+
+  &__cost-text {
+    font-size: $font-xs;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
